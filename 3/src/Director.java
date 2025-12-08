@@ -6,7 +6,7 @@ public class Director {
 
     public Director(String name, String surname){
         this.name = name;
-        this.surname = name;
+        this.surname = surname;
     }
 
     public String getName() {
@@ -35,6 +35,8 @@ public class Director {
 
     @Override
     public String toString(){
-        return "Director [ name = "+name+", surname = "+surname, dob = 16/8/1954, movies directed = 23]
+        return "Director [ name = "+name+", surname = "+surname+", dob = "+DOb+", movies directed = "+numDirectedMovies+"]";
     }
+
+
 }
