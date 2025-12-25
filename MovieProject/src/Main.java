@@ -1,23 +1,30 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
 
-        Director director = new Director("James", "Cameron");
-        Date dob = new Date(16, 8, 1954);
-        director.setDOb(dob);
+        System.out.println("--- Movie Database Entry ---");
 
-        director.setNumDirectedMovies(23);
-        System.out.println(director); // Director's toString()
-// Test Movie's constructor and toString()
-        Movie movie = new Movie("Avatar", "Fantasy",director);
-        System.out.println(movie); // Movie's toString()
-// Test Setters and Getters
-        movie.setNumAwards(23);
-        System.out.println(movie); // Movie’s toString()
-        System.out.println("title is: " + movie.getTitle());
-        System.out.println("category is: " + movie.getCategory ());
-        System.out.println("name of director is: " + movie.getDirector().getName());
-        System.out.println("surname of director is: " + movie.getDirector().getSurname());
-        System.out.println("number of awards is " + movie.getNumAwards());
+        while (running) {
+            try {
+                // --- 1. Get Director Details ---
+                System.out.println("\n--- Enter Director Details ---");
+                System.out.print("First Name: ");
+                String dName = scanner.nextLine();
+                
+                System.out.print("Surname: ");
+                String dSurname = scanner.nextLine();
+                
+                Director director = new Director(dName, dSurname);
 
-    }
-}
+                System.out.println("Date of Birth (DD MM YYYY): ");
+                System.out.print("Day: ");
+                int day = scanner.nextInt();
+                System.out.print("Month: ");
+                int month = scanner.nextInt();
+                System.out.print("Year: ");
+                int year = scanner.nextInt();
+
+            
